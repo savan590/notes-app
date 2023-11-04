@@ -1,10 +1,10 @@
-import React, { useState, useEffect ,useRef} from "react";
-import "./new.css";
+import React, { useState, useEffect,useRef } from "react";
+import "./create.css";
 import useClickOutside from "../ref_file/ref";
 
-function CreateNewNotes({ setGroupNames, exit}) {
+function CreateNewNotes({ setGroupNames, exit }) {
   const [newGroup, setNewGroup] = useState({ name: "", color: "rgb(179, 139, 250)" });
-
+  
   const boxRef = useRef(null);
   useClickOutside(boxRef, exit);
 
@@ -31,7 +31,7 @@ function CreateNewNotes({ setGroupNames, exit}) {
     }
     exit();
   };
-  
+ 
   const colorOptions = [
     "rgb(179, 139, 250)",
     "rgb(255, 121, 242)",
@@ -42,9 +42,9 @@ function CreateNewNotes({ setGroupNames, exit}) {
   ];
 
   return (
-    <div className="box" ref={boxRef}>
-      <div className="select_title">Create New Notes Group</div>
-      <div className="box_input">
+    <div className="m_box" ref={boxRef}>
+      <div className="m_select_title">Create New Notes Group</div>
+      <div className="m_box_input">
         <span>Group Name</span>
         <input
           value={newGroup.name}
@@ -53,17 +53,18 @@ function CreateNewNotes({ setGroupNames, exit}) {
           placeholder="Enter your group name...."
         />
       </div>
-      <div className="select_color">
+      <div className="m_select_color">
         <span>Choose Colour</span>
-        <div className="colors">
+        <div className="m_colors">
           {colorOptions.map((color, index) => (
             <div
               key={index}
               style={{
                 backgroundColor: color,
+                // border: "none",
                 border: newGroup.color === color ? "2px solid #000" : "none",
-                width: "25px",
-                height: "25px",
+                width: "20px",
+                height: "20px",
                 cursor: "pointer",
                 borderRadius: "50%",
               }}
@@ -72,7 +73,7 @@ function CreateNewNotes({ setGroupNames, exit}) {
           ))}
         </div>
       </div>
-      <div className="create_part">
+      <div className="m_create_part">
         <button onClick={saveGroup}>Create</button>
       </div>
     </div>
@@ -80,4 +81,3 @@ function CreateNewNotes({ setGroupNames, exit}) {
 }
 
 export default CreateNewNotes;
-

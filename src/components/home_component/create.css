@@ -1,0 +1,73 @@
+.m_box {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    width: 75vw;
+    margin-top: 50%;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.m_select_title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    height: 30px;
+    width: 70vw;
+    margin: 5px 7px;
+    
+}
+
+.m_box_input {
+    display: flex;
+    height: 80px;
+    /* width: 100%; */
+    font-size: 15px;
+    font-weight: 600;
+    align-items: center;
+    gap: 14px;
+}
+
+.m_box_input>input {
+    /* display: flex; */
+    height: 30px;
+    width: 40vw;
+    border-radius: 15px;
+    border: 2px solid black;
+    font-size: 12px;
+    font-weight: 600;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.m_colors {
+    display: flex;
+    gap: 4px;
+}
+.m_select_color {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    gap: 17px;
+}
+  
+.m_create_part {
+    display: flex;
+    margin-top: 20px;
+}
+
+.m_create_part>button {
+    height: 30px;
+    width: 45vw; 
+    background-color: black;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    border: none;
+}

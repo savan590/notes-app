@@ -1,44 +1,38 @@
-import React from 'react';
-// import CreateNote from '../src/components/newnotes';
-// import NoteList from '../src/components/notelist';
+import React,{useState,useEffect} from 'react';
+import CreateNote from '../src/components/mobile_home/mobileHome';
+import Notes from '../src/components/mobile_notes/notes_page';
 import Web from './components/Web_view/web'
-// import R from './components/right'
-import { SelectedProvider } from "./components/Context_file/note";
+import { SelectedProvider } from "./components/Context_file/context";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-    // const [notes, setNotes] = useState([]);
+   
+    const [isMobileView, setIsMobileView] = useState(false);
+    const updateView = () => {
+        if (window.innerWidth > 500) {
+            setIsMobileView(false);
+        } else {
+            setIsMobileView(true);
+        }
+    };
 
-    // // Load notes from local storage on initial render
-    // useEffect(() => {
-    //     const storedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
-    //     setNotes(storedNotes);
-    // }, []);
-
-    // // Save notes to local storage when notes change
-    // useEffect(() => {
-    //     localStorage.setItem('notes', JSON.stringify(notes));
-    // }, [notes]);
-
-    // const addNote = (note) => {
-    //     setNotes([...notes, note]);
-    // };
-    // const [groupNamesParent, setGroupNamesParent] = useState(
-    //     localStorage.getItem("groupNames") || []
-    // );
-    // useEffect(() => {
-    //     const data = JSON.parse(localStorage.getItem("groupNames")) || [];
-    //     const e = data.name
-    //     setGroupNamesParent(e);
-    // }, []);
+    useEffect(() => {
+        window.addEventListener('resize', updateView);
+        updateView();
+        return () => {
+            window.removeEventListener('resize', updateView);
+        };
+    }, []);
 
 
     return (
         <div className="app">
-            {/* <CreateNote addNote={addNote} />
-            
-        <NoteList notes={notes} /> */}
             <SelectedProvider>
-                <Web />
+            {isMobileView ?  
+                <Routes>
+                    <Route path="/" element={<CreateNote />} />
+                    <Route path="/Note" element={<Notes />} />
+                </Routes>:<Web />}
             </SelectedProvider>
         </div>
     );

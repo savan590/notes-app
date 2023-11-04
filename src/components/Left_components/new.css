@@ -1,234 +1,69 @@
-/* .create-note {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  .create-note input {
-    width: 100%;
-    margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .create-note button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  } */
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 34vh;
+  width: 34vw;
+  margin-top: 15%; /*25 50*/
+  margin-left: 35%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 18px;
+}
 
-  /* .popup {
-    height: 12rem;
-    width: 25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 20px;
-  }
-  
-  .popup__title {
-    text-align: left;
-    height: 2rem;
-    width: 23rem;
-    font-size: 3.2vh;
-    font-weight: 700;
-    margin: 0 1vh 1vh 1vh;
-  }
-  
-  .popup__input {
-    height: 2rem;
-    width: 23rem;
-    font-size: 3vh;
-    font-weight: 600;
-    display: flex;
-    gap: 2vw;
-    align-items: center;
-    margin: 1vh 1vh 1vh 3vh;
-  }
-  
-  .popup__input > input {
-    width: 14vw;
-    height: 3vh;
-    border: 2px solid grey;
-    border-radius: 6vh;
-    padding: 0.5rem;
-    font-size: 2vh;
-    font-weight: 600;
-  }
-  
-  .popup__color__input {
-  
-    font-size: 3vh;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    gap: 2vw;
-    align-items: center;
-    margin: 2vh 2vh 1vh 0vh;
-  }
-  
-  .popup__color__input__color {
-    display: flex;
-    gap: 0.7vw;
-  }
-  
-  
-  .popup__close {
-    height: 2rem;
-    width: 23rem;
-    display: flex;
-    justify-content: flex-end;
-    margin: 1vh 1vh 1vh 1vh;
-  }
-  
-  .popup__close > button {
-    margin-top: 1rem;
-    height: 5vh;
-    width: 8vw;
-    color: white;
-    font-weight: 500;
-    border: none;
-    border-radius: 4vh;
-    background-color: black;
-  }
-  
-  .highlight{
-      border: 2px solid black;
-      border-radius: 6vh;
-  }
-   */
-   .box {
-    /* height: 12rem;
-    width: 25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px; */
-    height: 32vh;
-    width: 34vw;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    position: absolute;
-    margin-top: 25%;
-    margin-left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-  }
-  
-  .select_title {
-    /* text-align: left;
-    height: 2rem;
-    width: 100%;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0.5rem 1rem; */
-    text-align: left;
-    height: 30px;
-    width: 100%;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 5px 7px;
-    /* margin-left: 5px; */
-  }
-  
-  .box_input {
-    /* display: flex;
-    align-items: center;
-    margin: 1rem 1rem; */
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px 10px;
-  }
-  
-  .box_input>input {
-    /* width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 600; */
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    /* padding: 10px 10px; */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    /* font-size: 1.2rem; */
-    margin-left: 30px;
-    font-weight: 600;
-  }
-  
-  .select_color {
-    /* display: flex;
-    align-items: center;
-    margin: 1rem 0; */
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    /* margin: 20px 0; */
-    margin-top: 10px;
-    padding-left: 10px;
-  }
-  
-  .colors {
-    display: flex;
-    gap: 12px;
-    margin-left: 25px;
-  }
-  
-  .create_part {
-    display: flex;
-    justify-content: flex-end;
-    /* margin: 1rem 1rem; */
-    margin-bottom: 10px;
-  }
-  
-  .create_part>button {
-    /* margin-top: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer; */
-    margin-top: 25px;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 10vw;
-  }
-  
+.select_title {
+  margin: 5px 7px;
+  font-size: 22px;
+  height: 30px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.box_input {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 10px;
+  align-items: center;
+}
+
+.box_input>input {
+  width: 55%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 0px 10px 30px;
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+.select_color {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.colors {
+  display: flex;
+  gap: 12px;
+  margin-left: 25px;
+}
+
+.create_part {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.create_part>button {
+  margin-top: 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100px;
+}

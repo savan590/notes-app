@@ -1,11 +1,11 @@
 import React from "react";
 import "./title.css";
-import { useSelected } from "../Context_file/note";
+import { useSelected } from "../Context_file/context";
 
-function NoteTitle({ title }) {
+function Title({ title }) {
   const { isSelected, setIsSelected } = useSelected();
 
-  const handleTitleClick = (name) => {
+  const handleClick = (name) => {
     setIsSelected(name);
   };
 
@@ -13,13 +13,14 @@ function NoteTitle({ title }) {
     <div>
       {title.length > 0 &&
         title.map((group, index) => {
-          const { name, color } = Array.isArray(group) ? group[0] : group;
+          const { name, color } = group;
+          // console.log(color)
           const isHighlighted = isSelected === name;
 
           return (
             <div
               key={index}
-              onClick={() => handleTitleClick(name)}
+              onClick={() => handleClick(name)}
               className={`icon_title ${isHighlighted ? "highlighted" : ""}`}
             >
               <div className="icon" style={{ backgroundColor: color }}>
@@ -33,7 +34,7 @@ function NoteTitle({ title }) {
   );
 }
 
-export default NoteTitle;
+export default Title;
 
 // import React from "react";
 // import "./title.css";

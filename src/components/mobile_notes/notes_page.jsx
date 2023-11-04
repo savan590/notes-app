@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./right.css";
+import "./notes_page.css";
 import enter from "../../images/Vector (5).png";
+import arrow from "../../images/arrow.png";
 import { useSelected } from "../Context_file/context";
+import { useNavigate } from "react-router-dom";
 
-function Right_Part() {
+
+function Mobile_notes() {
   const [text, setText] = useState("");
   const [selectedTitleInfo, setSelectedTitleInfo] = useState(null);
   const [notes, setNotes] = useState([]);
-  const { isSelected } = useSelected();
+  const { isSelected , setIsSelected} = useSelected();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const selectedGroupInfo = initializeSelectedGroupInfo(isSelected);
@@ -40,9 +44,9 @@ function Right_Part() {
   };
 
   const SaveNotes = () => {
-    if (text.trim() === '') {
-      return;
-    }
+    if (text.trim()==='') {
+        return;
+      }
     const newNote = {
       title: isSelected,
       detail: text.trim(),
@@ -68,39 +72,44 @@ function Right_Part() {
   const handleChangeText = (e) => {
     setText(e.target.value);
   };
+  const back = () => {
+    setIsSelected("");
+    navigate("/");
+  };
 
   return (
-    <div className="display_notes">
-      <div className="right_icon_title">
+    <div className="m_display_notes">
+      <div className="m_right_icon_title">
+      <img src={arrow} style={{marginLeft:"15px"}}alt="" onClick={back} />
         {selectedTitleInfo && (
           <>
             <div
-              className="right_icon"
+              className="m_right_icon"
               style={{ backgroundColor: selectedTitleInfo.bgColor }}
             >
               {selectedTitleInfo.icon}
             </div>
-            <div className="right_title">
+            <div className="m_right_title">
               {selectedTitleInfo.selectedTitle}
             </div>
           </>
         )}
       </div>
-      <div className="note_details">
+      <div className="m_note_details">
         {notes.length > 0 &&
           notes.map((note, index) => (
-            <div className="content" key={index}>
-              <div className="date_time">
-                <div className="time">{note.time}</div>
-                <div className="date">{note.date}</div>
+            <div className="m_content" key={index}>
+              <div className="m_date_time">
+                <div className="m_time">{note.time}</div>
+                <div className="m_date">{note.date}</div>
               </div>
-              <div className="notes">
+              <div className="m_notes">
                 <p>{note.detail}</p>
               </div>
             </div>
           ))}
       </div>
-      <div className="type_text">
+      <div className="m_type_text">
         <textarea
           value={text}
           placeholder="Enter your notes here........."
@@ -113,8 +122,4 @@ function Right_Part() {
   );
 }
 
-export default Right_Part;
-
-
-
-
+export default Mobile_notes;

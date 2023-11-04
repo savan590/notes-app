@@ -1,21 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./left.css";
 import CreateNote from "../Left_components/newnotes";
 import Titles from "../Left_components/title";
 
 function Web_Left() {
-  const [isBoxshow, setBoxshow] = useState(false);
+  const [isBoxOpen, setBoxOpen] = useState(false);
   const [titles, setTitles] = useState([]);
 
   useEffect(() => {
-    const storedGroupNames = JSON.parse(localStorage.getItem("groupNames")) || [];
+    const storedGroupNames = JSON.parse(localStorage.getItem("Notes")) || [];
     setTitles(storedGroupNames);
   }, []);
+  
+  const showBox = () => setBoxOpen(true);
+  const hideBox = () => setBoxOpen(false);
+  
+  return (
+    <div className="left_part">
+      <div className="left_text">Pocket Notes</div>
+      <div className="left_create_btn">
+        <button onClick={showBox}>
+          <span id="plus">+</span>
+          <span>Create Notes Group</span>
+        </button>
+      </div>
+      <div className="left_notes_title">
+        <Titles title={titles} />
+      </div>
+      {isBoxOpen && (
+        <div className="left_box">
+          <CreateNote setGroupNames={setTitles} exit={hideBox} />
+        </div>
+      )}
+    </div>
+  );
+}
 
-  const showBox = () => setBoxshow(true);
-  const hideBox = () => setBoxshow(false);
+export default Web_Left;
 
-  // const handleClickOutside = (e) => {
+
+
+// const handleClickOutside = (e) => {
   //   const box = document.querySelector(".left_box");
   //   if (box && !box.contains(e.target)) {
   //     showBox()
@@ -33,29 +58,6 @@ function Web_Left() {
   //     document.removeEventListener("click", handleClickOutside);
   //   };
   // }, [isBoxshow]);
- 
-  return (
-    <div className="left_part">
-      <div className="left_text">Pocket Notes</div>
-      <div className="left_create_btn">
-        <button onClick={showBox}>
-          <span id="plus">+</span>
-          <span>Create Notes Group</span>
-        </button>
-      </div>
-      <div className="left_notes_title">
-        <Titles title={titles} />
-      </div>
-      {isBoxshow && (
-        <div className="left_box">
-          <CreateNote setGroupNames={setTitles} onClose={hideBox} />
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default Web_Left;
 
 // import React, { useEffect, useState } from "react";
 // import "./left.css";

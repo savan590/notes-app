@@ -1,0 +1,67 @@
+.m_left_part{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #f2f2f2; */
+    /* padding: 2vw; */
+  }
+  
+  .m_left_text{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 30px 25px;
+    /* text-align: left; */
+  }
+  
+  .m_left_create_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    /* margin: 40px 0px 0px 35px; */
+    
+  }
+  
+  .m_left_create_btn > button{
+    width: 90%;
+    height: 60%;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 15px;
+    padding-left: 20px; */
+    font-size: 18px;
+  }
+  
+  #m_plus {
+    font-size: 30px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    /* padding-left: 20px; */
+    padding-right: 15px;
+  }
+  
+  .m_left_box {
+      /* left: 0; */
+      width: 100vw;
+      position: fixed;
+      top: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* z-index: 999; */
+  }
+  
+  .m_left_notes_title {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 90vh;
+    
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
